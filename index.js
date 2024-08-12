@@ -27,14 +27,16 @@ console.log(arr2); // giá trị trả về [2, 6, 10 ]
 //            currentValue là biến hiện tại được xử lý của mảng
 //            index là vị trí hiện tại của biến đang được xử lý của mảng
 //            array là mảng hiện tại của hàm gọi reduce
-// initialValue là giá thị tham chiếu đầu tiên (accumulator) của hàm callback trong lần gọi đầu tiên. Nếu giá trị  ko được cung cấp thì mặc định là 0 
+// initialValue là giá thị tham chiếu đầu tiên (accumulator) của hàm callback trong lần gọi đầu tiên. Nếu giá trị  ko được cung cấp thì mặc định là phần tử
+// đầu tiên của mảng
 // demo:
 const result = arr.reduce((result, currentValue) => {
     return result + currentValue
 })
 console.log(result); // giá trị trả về 46
 // giải thích: reduce là một hàm với hai giá trị là result và currentValue
-// bởi vì không truyền initialValue vào cuối của mảng nên giá trị ban đầu của result mặc định là 0(nếu initialValue là 1 thì giá trị ban đầu của result là 1, etc)
+// bởi vì không truyền initialValue vào cuối của mảng nên giá trị ban đầu của result mặc định là giá trị ban đầu là giá trị đầu tiên của mảng
+// (nếu initialValue là 1 thì giá trị ban đầu của result là 1, etc)
 // tương tự vòng lặp for thì hàm reduce sẽ quay vòng qua từng giá trị của mảng
 // mỗi lần thực hiện một vòng lặp thì result sẽ nhận giá trị bằng result + currentValue, và currentValue thay đổi thành giá trị tiếp theo trong mảng theo 
 // chiều từ trái qua phải.
@@ -174,3 +176,6 @@ console.log(evenNum.every((item) => {
     return item % 2 == 0
 }));// kết quả trả về: false
 //giải thích: dựa vào định nghĩa của every, bởi vì có 1 giá trị là 13 ko thõa mãn điều kiện nên hàm every() trả về false
+
+// reserve()
+// hàm reserve() như định nghĩa là một hàm đảo ngược lại vị trí các thứ tự trong mảng   
