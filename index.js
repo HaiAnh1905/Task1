@@ -110,12 +110,20 @@ const checkPassScore = (score) => {
     return score < 5
 };
 const myFunc = () => {
-    if(score.some == true){
+    if(score.some(checkPassScore) == true){
         console.log("Rớt");
     }
     else {console.log("Đỗ");
     }
-}
+} 
+myFunc()// kết quả trả về: Rớt
+// giải thích: bởi vì trong mảng score tồn tại 1 giá trị nhỏ hơn 5 -> hàm callback() thõa mãn điều kiện và trả về true -> hàm some() trả về là True
+// mà nếu kết quả trả về là true thì sẽ trả về là ko đỗ hay là rớt
 
 //sort()
-// hàm sort
+// hàm sort là một method thuộc đối tượng array trong js, được đùng dể sắp xếp các phần tử trong mảng tăng dần
+// hoặc giảm dần theo số thứ tự trong bảng mã ascii, hoặc theo quy tắc trong callback function.
+// lưu ý: hàm sort sẽ gặp rắc rối trong việc sắp xếp các con số sẽ ko được chính xác( ví dụ 20 vs 100 thì 20 > 100 vì 2 > 1)
+// nên cần thêm một hàm so sánh riêng biệt để tránh trường hợp trên, trong khi đó thì sắp xếp các chữ cái rất chính xác
+// demo:
+    
