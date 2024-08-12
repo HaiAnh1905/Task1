@@ -1,16 +1,17 @@
 let arr = [1,2,5,6,7,10,15]
+
 // map()
 // là phương thức được dùng để thao tác với các phần tử trên 1 mảng và trả về 1 giá trị thay đổi dựa trên mảng đó.
 // demo: 
 const arr1 = arr.map(items => items*2);
-console.log(arr1);
+console.log(arr1); // giá trị trả về [2,4,10,12,14,20,30]
 // giải thích: hàm map() sẽ lấy từng phần tử có trong mảng arr rồi lấy phần tử đấy *2 và trả về cho giá trị arr1
 
 // filter()
 // hàm filter() được dùng để tạo ra 1 tập con của 1 mảng được truyền vào và chỉ những phần tử thõa mãn mới được đưa vào 1 tập con
 // demo:
 const arr2 = arr.filter(items => items % 2 == 0);
-console.log(arr2);
+console.log(arr2); // giá trị trả về [2, 6, 10 ]
 // giải thích:  hàm filter sẽ lấy ra các phần tử chia hết cho 2 có trong arr và truyền vào mảng arr2
 
 // reduce()
@@ -27,7 +28,7 @@ console.log(arr2);
 const result = arr.reduce((result, currentValue) => {
     return result + currentValue
 })
-console.log(result);
+console.log(result); // giá trị trả về 46
 // giải thích: reduce là một hàm với hai giá trị là result và currentValue
 // bởi vì không truyền initialValue vào cuối của mảng nên giá trị ban đầu của result mặc định là 0(nếu initialValue là 1 thì giá trị ban đầu của result là 1, etc)
 // tương tự vòng lặp for thì hàm reduce sẽ quay vòng qua từng giá trị của mảng
@@ -42,7 +43,7 @@ console.log(result);
         //   until là vị trí index phần tử được cắt đến
 // demo
 const arr3 = arr.slice(3, 6)
-console.log(arr3);
+console.log(arr3); // giá trị trả về [ 6, 7, 10 ]
 // giải thích: mảng arr3 sẽ được trả về từ giá trị thứ 3 của mảng đến giá trị thứ 5 của mảng arr
 
 //splice:
@@ -53,7 +54,7 @@ console.log(arr3);
         //   từ phần tử index trong mảng)
 // demo: 
 arr.splice(1,3)
-console.log(arr);
+console.log(arr); // giá trị trả về [ 1, 7, 10, 15 ]
 // arr = [1,2,5,6,7,10,15]
 // giải thích: vì đối số index được truyền vào là 1, và noe được truyền vào là 3 nên hàm splice sẽ loại bỏ các phần tử 2, 5, 6
 arr = [1,2,5,6,7,10,15]
@@ -66,7 +67,7 @@ arr = [1,2,5,6,7,10,15]
 const arr4 = arr.find((items) => {
     return items < 6
 })
-console.log(arr4);
+console.log(arr4); // giá trị trả về 1
 //  arr = [1,2,5,6,7,10,15]
 // giải thích: bởi vì tại ngay tại giá trị đầu tiên của mảng đã thõa mãn điều kiện là nhỏ hơn 6 nên hàm kiểm tra trả về true từ đó hàm find() trả về giá trị
 // thõa mãn và dừng việc tìm kiếm lại.(nếu không thõa mãn thì hàm sẽ trả về giá trị là undefined)
@@ -77,7 +78,7 @@ console.log(arr4);
 const index1 = arr.findIndex((item) => {
     return item > 6
 })
-console.log(index1);
+console.log(index1); // giá trị trả về 4
 //  arr = [1,2,5,6,7,10,15]
 // giải thích: bởi vì tại giá trị bằng 7 thõa mãn điều kiện > 6 nên hàm findIndex() sẽ trả về vị trí của nó tại 4
 
@@ -92,6 +93,12 @@ const fruit = ['banana','apple','pineapple','orange','mango']
 fruit.forEach((item) => {
     console.log(`I love ${item}`);
 })
+// trả về:D
+// I love banana
+// I love apple
+// I love pineapple
+// I love orange
+// I love mango
 
 // some()
 // hàm some() có nhiệm vụ lặp qua tất cả các phần tử của mảng, mỗi lần lặp nó sẽ truyền giá trị của phần tử đang lặp vào hàm callback
@@ -109,3 +116,6 @@ const myFunc = () => {
     else {console.log("Đỗ");
     }
 }
+
+//sort()
+// hàm sort
